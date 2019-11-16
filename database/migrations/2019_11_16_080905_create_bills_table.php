@@ -17,8 +17,10 @@ class CreateBillsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('type_id');
             $table->decimal('amount', 8, 2);
+            $table->unsignedBigInteger('status_id');
             $table->timestamps();
 
+            $table->foreign('status_id')->references('id')->on('status')->onDelete('cascade');
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
         });
     }
