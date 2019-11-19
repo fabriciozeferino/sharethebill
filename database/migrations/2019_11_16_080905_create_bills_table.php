@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateBillsTable extends Migration
 {
@@ -16,11 +16,10 @@ class CreateBillsTable extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('type_id');
-            $table->decimal('amount', 8, 2);
             $table->unsignedBigInteger('status_id');
             $table->timestamps();
 
-            $table->foreign('status_id')->references('id')->on('status')->onDelete('cascade');
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
         });
     }

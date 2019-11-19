@@ -11,17 +11,17 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('status')->insert([
+        DB::table('statuses')->insert([
             [
-                'status' => 'Opened',
+                'description' => 'Opened',
                 'created_at' => now()
             ],
             [
-                'status' => 'Shared',
+                'description' => 'Shared',
                 'created_at' => now()
             ],
             [
-                'status' => 'Paid',
+                'description' => 'Paid',
                 'created_at' => now()
             ]
         ]);

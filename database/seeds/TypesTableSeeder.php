@@ -13,22 +13,22 @@ class TypesTableSeeder extends Seeder
     {
         DB::table('types')->insert([
             [
-                'type' => 'Dinner',
+                'description' => 'Dinner',
                 'created_at' => now()
 
             ],
             [
-                'type' => 'Travel',
+                'description' => 'Travel',
                 'created_at' => now()
 
             ],
             [
-                'type' => 'Restaurant',
+                'description' => 'Restaurant',
                 'created_at' => now()
 
             ],
             [
-                'type' => 'Goods',
+                'description' => 'Goods',
                 'created_at' => now()
 
             ]

@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/bills/opened', 'BillController@opened')->name('bills.opened');
+    Route::post('/bills/close', 'BillController@close')->name('bills.close');
+    Route::resource('/bills', 'BillController');
+});
